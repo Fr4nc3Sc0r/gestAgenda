@@ -1,6 +1,7 @@
 
 import java.util.Scanner;
 import java.io.IOException;
+import java.util.InputMismatchException;
 
 public class Main {
 
@@ -38,7 +39,9 @@ public class Main {
                     try {
                         agenda.importaContatti(percorso);
                     } catch (IOException e) {
-                        System.out.println("Errore");
+                        System.out.println("Errore 1");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Errore 2");
                     }
                 }
                     break;
