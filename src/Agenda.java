@@ -34,8 +34,6 @@ public class Agenda {
         FileReader f = new FileReader(percorso);
         BufferedReader fIN = new BufferedReader(f);
 
-        System.out.println("comunicazione aperta");
-
         String s;
 
         try {
@@ -44,19 +42,12 @@ public class Agenda {
 
                 StringTokenizer st = new StringTokenizer(s, ";");
 
-                System.out.println("io sono partito");
-
                 for (int i = 0; st.hasMoreTokens(); i++) {
 
                     Contatto temp = new Contatto(st.nextToken(), st.nextToken(), st.nextToken());
 
-                    System.out.println(dimensione);
-
                     contatti[dimensione] = temp;
 
-                    dimensione++;
-
-                    System.out.println(contatti[i]);
                 }
 
             } while (s != null);
