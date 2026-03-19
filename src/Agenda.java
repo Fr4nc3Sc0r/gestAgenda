@@ -1,9 +1,10 @@
 import java.io.*;
 import java.util.StringTokenizer;
+import java.util.Vector;
 
 public class Agenda {
     // attributi
-    private Contatto[] contatti = new Contatto[100];
+    private Vector<Contatto> contatti = new Vector<Contatto>();
     private int dimensione;
 
     // metodo costruttore
@@ -12,7 +13,7 @@ public class Agenda {
     }
 
     public void inserisciContatto(Contatto contatto) {
-        contatti[dimensione] = contatto;
+        contatti.add(contatto);
         dimensione++;
         try {
             FileWriter f = new FileWriter("agenda.txt", true);
@@ -26,7 +27,7 @@ public class Agenda {
 
     public void stampaContatti() {
         for (int i = 0; i < dimensione; i++) {
-            System.out.println("CONTATTO N. " + (i + 1) + "\n" + contatti[i]);
+            System.out.println("CONTATTO N. " + (i + 1) + "\n" + contatti.elementAt(i));
         }
     }
 
@@ -46,7 +47,7 @@ public class Agenda {
 
                     Contatto temp = new Contatto(st.nextToken(), st.nextToken(), st.nextToken());
 
-                    contatti[dimensione] = temp;
+                    contatti.add(temp);
 
                 }
 
